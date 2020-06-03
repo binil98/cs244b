@@ -1,0 +1,3 @@
+rpcgen msg.x
+cc rprintmsg.c msg_clnt.c -o rprintmsg -lnsl
+cc msg_proc.c msg_svc.c -o msg_server -lnsl
