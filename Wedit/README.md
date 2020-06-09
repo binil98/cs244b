@@ -1,3 +1,4 @@
+Code adopted from https://github.com/abrampers/Wedit/ and modified. 
 <img src="logo.png">
 
 Wedit - Real-Time Collaborative Text Editor
