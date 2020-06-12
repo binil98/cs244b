@@ -1,6 +1,10 @@
 #include "peer.h"
 #include "mainwindow.h"
 #include <iostream>
+#include <rpc/rpc.h>
+#include "msg.h"
+
+
 
 void error(const char *msg) {
     perror(msg);
@@ -169,6 +173,11 @@ int Peer::Connect(std::string host, int port) {
     int clientSockID;
     struct sockaddr_in address;
     struct hostent *server;
+    
+    char *RPCserver;
+    CLIENT *cl;
+    // struct hostent *
+    cl = clnt_create(RPCserver, MESSAGEPROG, MESSAGEVERS, "tcp");
 
     if( (clientSockID = ::socket(AF_INET , SOCK_STREAM , 0)) == 0) {   
         puts("Peer::Connect: failed to create socket");  
